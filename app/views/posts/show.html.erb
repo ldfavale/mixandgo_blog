@@ -1,0 +1,13 @@
+
+<h3 style="margin-bottom: 0px; "><%= @post.title %></h3>
+<h5 style="color: gray; margin-top: 0px; margin-bottom: 5px;"><%= "#{@post.user.name} #{@post.user.lastname}" %></h5>
+
+
+<%= "#{@post.body} " %>
+</br></br></br>
+
+<div>
+  <%= link_to "Edit this post", edit_post_path(@post) if @post.user.id == session[:user_id]%> |
+  <%= link_to "Back to posts", posts_path %>
+  <%= button_to "Destroy this post", @post, method: :delete if  @post.user.id == session[:user_id]%>
+</div>

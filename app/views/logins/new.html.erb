@@ -1,0 +1,23 @@
+<h1> Log In</h1>
+
+<%= form_with model: @user , url: logins_path do | form | %>
+    <div>
+    <%= form.label :email %><br>
+    <%= form.email_field :email %>
+    </div>
+    
+    <div>
+    <%= form.label :password %><br>
+    <%= form.password_field :password %>
+    </div>
+    
+    <div>
+        <%= form.submit "Login" %>
+    </div>
+
+    Not registered yet? Please
+    <%= link_to "Sign Up", new_registration_path %>
+    </br>
+    No thanks i just want to see the 
+    <%= link_to "Blog", posts_path %>
+<% end %>
